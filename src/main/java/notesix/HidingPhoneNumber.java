@@ -48,7 +48,7 @@ public class HidingPhoneNumber {
 
     public static String solution3(String phone_number) {
         String[] split = phone_number.split("");
-
+        
         for (int loops = 0; loops < phone_number.length() - 4; loops++){
             split[loops] = "*";
         }
