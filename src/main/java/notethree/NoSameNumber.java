@@ -1,6 +1,4 @@
-package noteThree;
-
-import noteTwo.DTO;
+package notethree;
 
 import java.util.*;
 

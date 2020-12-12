@@ -1,4 +1,4 @@
-package noteThree;
+package notethree;
 
 import java.util.Stack;
 

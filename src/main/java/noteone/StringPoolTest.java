@@ -1,6 +1,6 @@
 package noteone;
 
-import noteTwo.DTO;
+import notetwo.DTO;
 
 public class StringPoolTest {
 

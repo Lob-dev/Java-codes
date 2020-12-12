@@ -1,4 +1,4 @@
-package noteThree;
+package notethree;
 
 public class getMiddleChar {
     public static void main(String[] args) {

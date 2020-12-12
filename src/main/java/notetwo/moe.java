@@ -1,8 +1,6 @@
-package noteTwo;
+package notetwo;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class moe {
     public static void main(String[] args) {

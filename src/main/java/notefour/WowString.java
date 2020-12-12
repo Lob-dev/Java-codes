@@ -1,10 +1,10 @@
 package notefour;
 
-public class FuckingString {
+public class WowString {
     public static void main(String[] args) {
-        FuckingString fuckingString = new FuckingString();
+        WowString wowString = new WowString();
 
-        System.out.println(fuckingString.solution("try helio world"));
+        System.out.println(wowString.solution("try helio world"));
     }
 
     public String solution(String s) {

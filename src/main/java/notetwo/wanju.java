@@ -1,4 +1,4 @@
-package noteTwo;
+package notetwo;
 
 import java.util.Arrays;
 

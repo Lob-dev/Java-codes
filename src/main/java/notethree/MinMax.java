@@ -1,4 +1,4 @@
-package noteThree;
+package notethree;
 
 import java.util.Arrays;
 import java.util.Scanner;

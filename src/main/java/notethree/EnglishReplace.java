@@ -1,9 +1,7 @@
-package noteThree;
+package notethree;
 
 import java.util.Arrays;
-import java.util.StringJoiner;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class EnglishReplace {
     public static void main(String[] args) {
