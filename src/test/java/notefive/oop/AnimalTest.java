@@ -13,8 +13,6 @@ public class AnimalTest {
         dog.showHabit();
         dog.showName();
 
-        System.out.printf("hello");
-
         System.out.println();
         System.out.println();
 
@@ -29,5 +27,14 @@ public class AnimalTest {
         animal1.dog = "불독";
         animal1.showDog();
         animal1.showDogs();
+    }
+
+    @Test
+    public void helloStatic(){
+        Pororo pororo = new Pororo();
+        System.out.println(pororo);
+        Pororo pororo1 = new Pororo();
+        System.out.println(pororo1);
+
     }
 }
