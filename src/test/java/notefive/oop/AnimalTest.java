@@ -35,6 +35,12 @@ public class AnimalTest {
         System.out.println(pororo);
         Pororo pororo1 = new Pororo();
         System.out.println(pororo1);
+    }
 
+    @Test
+    public void helloThis(){
+        Animal animal = new Animal();
+        animal.showName();
+        System.out.println(animal);
     }
 }
