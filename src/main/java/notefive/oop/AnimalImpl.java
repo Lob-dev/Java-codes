@@ -14,4 +14,9 @@ public class AnimalImpl extends AbstractsAnimal {
     public void showDog() {
         System.out.println("AnimalImpl.showDog");
     }
+
+    @Override
+    public void showPrint() {
+        System.out.println("AnimalImpl.showPrint");
+    }
 }

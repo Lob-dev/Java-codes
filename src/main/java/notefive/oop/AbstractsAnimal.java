@@ -15,4 +15,8 @@ public abstract class AbstractsAnimal {
         System.out.println(dog);
     }
 
+    public void showPrint(){
+        System.out.println("AbstractsAnimal.showPrint");
+    }
+
 }

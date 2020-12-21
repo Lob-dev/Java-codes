@@ -7,7 +7,13 @@ public class Animal {
         System.out.println("Animal.static initializer");
     }
 
+    {
+        this.name = "name";
+        System.out.println("Animal.instance initializer");
+    }
+
     public Animal() {
+        System.out.println(this.name);
         System.out.println("Animal.Animal default Constructor");
     }
 

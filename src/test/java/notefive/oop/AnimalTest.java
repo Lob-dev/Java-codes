@@ -22,11 +22,6 @@ public class AnimalTest {
 
         System.out.println();
         System.out.println();
-
-        AnimalImpl animal1 = new AnimalImpl();
-        animal1.dog = "불독";
-        animal1.showDog();
-        animal1.showDogs();
     }
 
     @Test
@@ -42,5 +37,28 @@ public class AnimalTest {
         Animal animal = new Animal();
         animal.showName();
         System.out.println(animal);
+    }
+
+    @Test
+    public void helloMethodOptimization(){
+        Animal animal = new Animal();
+        Animal animal2 = new Animal();
+        Animal animal3 = new Animal();
+        Animal animal4 = new Animal();
+        Animal animal5 = new Animal();
+        Animal animal6 = new Animal();
+
+        animal.showName();
+        animal2.showName();
+        animal3.showName();
+        animal4.showName();
+        animal5.showName();
+        animal6.showName();
+    }
+
+    @Test
+    public void extendTest(){
+        SuperClass clazz = new SubClazz();
+        clazz.showPrint();
     }
 }
