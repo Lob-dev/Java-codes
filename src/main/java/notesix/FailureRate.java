@@ -1,16 +1,13 @@
 package notesix;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 // 아직 못풀었..
 public class FailureRate {
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(solution(5, new int[]{2,1,2,6,2,4,3,3})));
-        //System.out.println(Arrays.toString(solution(4, new int[]{4,4,4,4,4})));
+        System.out.println(Arrays.toString(solution(4, new int[]{4,4,4,4,4})));
     }
 
     // 2 1 2 6 2 4 3 3 = 도전 중인 스테이지 번호
@@ -25,38 +22,35 @@ public class FailureRate {
     // 실패율이 같은 스테이지가 있다면 작은 번호의 스테이지가 먼저 온다.
     // 통과하면 N+1, 하지못하면 N
     public static int[] solution(int N, int[] stages) {
-        int[] answer = new int[N];
-        double totalUsers = 0;
-        double challenger = 0;
-        FailInfo[] rate = new FailInfo[N];
+        List<FailInfo> infoList = new ArrayList<>();
 
-        int index = 200000000;
-        for (int i = 0; i < stages.length; i++) {
-            if (stages[i] < index) {
-                index = stages[i];
-            }
-        }
+        for (int loop = 1; loop < N+1; loop++) {
+            int challenger = 0;
+            int totalUsers = 0;
 
-        for (int loop = index; loop < N+1; loop++) {
             for (int stage : stages) {
-                if (loop-1 < stage) {
-                    totalUsers+=1;
+                if (loop <= stage) {
+                    ++totalUsers;
                 }
                 if (loop == stage) {
-                    challenger+=1;
+                    ++challenger;
                 }
             }
-            rate[loop-1] = new FailInfo(loop, (challenger/totalUsers) );
-            System.out.println(loop-1);
-            totalUsers = 0;
-            challenger = 0;
+
+            if (totalUsers == 0) {
+                infoList.add(new FailInfo(loop, 0D));
+            } else {
+                infoList.add(new FailInfo(loop, ((double) challenger/totalUsers) ));
+            }
+
         }
 
-        System.out.println(Arrays.toString(rate));
-        return answer;
+        infoList.sort(FailInfo::compareTo);
+        System.out.println(infoList);
+        return infoList.stream().mapToInt(FailInfo::getIndex).toArray();
     }
 
-    private static class FailInfo{
+    private static class FailInfo implements Comparable<FailInfo> {
         private int stage;
         private double rate;
 
@@ -69,9 +63,16 @@ public class FailureRate {
             return stage;
         }
 
-        public Double getRate() {
+        public double getRate() {
             return rate;
         }
-    }
 
+        @Override
+        public int compareTo(FailInfo o) {
+            if(this.getRate() == o.getRate()){
+                return Integer.compare(this.getIndex(), o.getIndex());
+            }
+            return -Double.compare(this.getRate(), o.getRate());
+        }
+    }
 }

@@ -6,7 +6,6 @@ public class AnimalTest {
 
     @Test
     public void run() {
-        System.out.println("AnimalTest.run test");
         Dog dog = new Dog();
         dog.name = "푸들";
         dog.habit = "멍멍";
@@ -22,6 +21,13 @@ public class AnimalTest {
 
         System.out.println();
         System.out.println();
+
+        Animal animal1 = new Animal();
+        animal1.name = "불독";
+        animal1.showName();
+
+        /*System.out.println();
+        System.out.println();*/
     }
 
     @Test
