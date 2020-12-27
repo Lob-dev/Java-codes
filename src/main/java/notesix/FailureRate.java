@@ -2,7 +2,6 @@ package notesix;
 
 import java.util.*;
 
-// 아직 못풀었..
 public class FailureRate {
 
     public static void main(String[] args) {
@@ -24,29 +23,37 @@ public class FailureRate {
     public static int[] solution(int N, int[] stages) {
         List<FailInfo> infoList = new ArrayList<>();
 
-        for (int loop = 1; loop < N+1; loop++) {
+        // 스테이지 단계 수만큼 순회
+        for (int stageNum = 1; stageNum < N+1; stageNum++) {
             int challenger = 0;
             int totalUsers = 0;
 
-            for (int stage : stages) {
-                if (loop <= stage) {
+            // 유저의 수 만큼 순회
+            for (int userStage : stages) {
+                if (stageNum <= userStage) {
+                    // 현재 단계보다 해당 User 의 단계가 높다면 클리어
                     ++totalUsers;
                 }
-                if (loop == stage) {
+                if (stageNum == userStage) {
+                    // 현재 단계와 해당 User 의 단계가 같으면 미클리어
                     ++challenger;
                 }
             }
-
+            
+            // 해당 스테이지를 클리어한 사람이 없다면
             if (totalUsers == 0) {
-                infoList.add(new FailInfo(loop, 0D));
+                infoList.add(new FailInfo(stageNum, 0D));
             } else {
-                infoList.add(new FailInfo(loop, ((double) challenger/totalUsers) ));
+            // 해당 스테이지를 클리어한 사람이 있다면 도전자와 실패율 계산    
+                infoList.add(new FailInfo(stageNum, ((double) challenger/totalUsers) ));
             }
 
         }
-
+        
+        // 메서드 참조를 통해 해당 객체의 Comparable 구현 메서드를 호출
         infoList.sort(FailInfo::compareTo);
-        System.out.println(infoList);
+        
+        // 스트림을 통한 배열 변환
         return infoList.stream().mapToInt(FailInfo::getIndex).toArray();
     }
 
