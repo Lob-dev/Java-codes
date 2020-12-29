@@ -2,7 +2,9 @@ package notesix;
 
 import notefive.Num;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class StringConvertingToNumber {
 
@@ -38,6 +40,7 @@ public class StringConvertingToNumber {
         System.out.println(converter.solution3("-909"));
         System.out.println(converter.solution3("-90"));
         System.out.println(converter.solution3("-9"));
+
     }
 
     public int solution(String s) {

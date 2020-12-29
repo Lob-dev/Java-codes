@@ -15,14 +15,17 @@ public class Cache {
     }
 
     public static int solution(int cacheSize, String[] cities) {
+
         final int CACHE_HIT = 1;
         final int CACHE_MISS = 5;
+
         if (cacheSize == 0) {
             return (cities.length) * CACHE_MISS;
         }
-        int answer = 0;
+
         Queue<String> queue = new LinkedList<>();
 
+        int answer = 0;
         for (String city : cities) {
             city = city.toLowerCase();
             if (!queue.contains(city)) {

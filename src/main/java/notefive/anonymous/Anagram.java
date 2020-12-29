@@ -16,9 +16,7 @@ public class Anagram {
         String[] split = anagram.split("");
         String[] split2 = anagram2.split("");
 
-        List<String> list = new ArrayList<>();
-
-        list.addAll(Arrays.asList(split));
+        List<String> list = new ArrayList<>(Arrays.asList(split));
 
         for (String s : split2) {
             list.remove(s);

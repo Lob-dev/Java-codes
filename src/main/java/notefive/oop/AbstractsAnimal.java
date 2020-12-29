@@ -5,7 +5,7 @@ public abstract class AbstractsAnimal {
     public String dog;
 
     public AbstractsAnimal() {
-        System.out.println("AbstractsAnimal.AbstractsAnimal default constructor");
+        System.out.println("AbstractsAnimal. default constructor");
     }
 
     public abstract void showDog();
