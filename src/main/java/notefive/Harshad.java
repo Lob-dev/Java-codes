@@ -21,11 +21,7 @@ public class Harshad {
             sum += Integer.parseInt(s);
         }
 
-        if (x % sum == 0) {
-            return true;
-        }
-
-        return false;
+        return x % sum == 0;
     }
 
 

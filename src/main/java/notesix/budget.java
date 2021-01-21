@@ -12,9 +12,9 @@ public class budget {
     public static int solution(int[] d, int budget) {
         int answer = 0;
         Arrays.sort(d);
-        for (int loop = 0; loop < d.length; loop++) {
-            if (d[loop] <= budget) {
-                budget -= d[loop];
+        for (int i : d) {
+            if (i <= budget) {
+                budget -= i;
                 ++answer;
             }
         }
